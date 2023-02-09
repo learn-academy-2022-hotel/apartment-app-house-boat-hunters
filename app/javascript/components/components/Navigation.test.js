@@ -14,7 +14,7 @@ describe("<Navigation />", () => {
       div
     )
   })
-  it("has clickable links", () => {
+  it("has home in the text", () => {
     render(
       <BrowserRouter>
         <Navigation />
@@ -22,5 +22,14 @@ describe("<Navigation />", () => {
     )
     userEvent.click(screen.getByText("Home"))
     expect(screen.getByText("Home")).toBeInTheDocument()
+  })
+  it("has a sign in button", () => {
+    render(
+      <BrowserRouter>
+        <Navigation />
+      </BrowserRouter>
+    )
+    userEvent.click(screen.getByText(/sign in/i))
+    expect(screen.getByText(/sign in/i)).toBeInTheDocument()
   })
 })
