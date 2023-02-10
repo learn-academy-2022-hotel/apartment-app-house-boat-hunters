@@ -36,6 +36,7 @@ const App = (props) => {
         <Route path="/apartmentshow" element={<ApartmentShow />} />
         <Route path="/apartmentnew" element={<ApartmentNew />} />
         <Route path="/apartmentedit" element={<ApartmentEdit />} />
+        <Route path="/mylistings" element={<ProtectedApartmentIndex apartments={apartments} current_user={ props.current_user} /> } />
         <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />
